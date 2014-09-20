@@ -11,6 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20140920211634) do
+
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "food_type"
@@ -26,6 +28,7 @@
     t.float    "latitude"
     t.float    "longitude"
     t.string   "description"
+    t.boolean  "relevant"
   end
 
   create_table "taggings", force: true do |t|
