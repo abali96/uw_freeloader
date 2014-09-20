@@ -35,20 +35,21 @@
       <%= f.text_field :quantity%>
     </div>
     <div class="field">
-      <%= f.label :quality, "Quality out of 5" %><br/>
+      <%= f.label :quality %><br/>
       <%= f.text_field :quality %>
     </div>
     <div class="field">
-      <%= f.label :awkwardness, "Awkwardness out of 5" %><br/>
+      <%= f.label :awkwardness %><br/>
       <%= f.text_field :awkwardness %>
     </div>
     <div class="field">
-      <%= f.label :wait_time, "Wait Time (minutes)" %><br/>
+      <%= f.label :wait_time %><br/>
       <%= f.text_field :wait_time %>
     </div>
   <% end %>
   <div class="actions">
     <%= f.submit %>
+    <%= f.hidden_field :user_id, :value => @user_id %>
   </div>
 
 <% end %>
