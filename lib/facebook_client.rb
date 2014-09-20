@@ -17,7 +17,7 @@ module FacebookClient
   end
 
   def societies
-    ["uwengsoc", "mathsoc"]
+    ["appliedhealthsciencesundergraduatemembers", "arts.student.union", "sofa.uw", "uwengsoc", "UWESSociety", "mathsoc", "UWScienceSociety", "uwaterlooace", "UWACC", "youwillact", "uwaterlooasa", "UWARA", "uwapprentice", "uw.autosports", "uwblackjack", "c3inspire", "UWCabaret", "kwsalseros", "EngineersInMedicine", "UWEnglishTutors", "uwfa", "uWaterlooSororities", "UWHAPN", "uwhiphop", "hksa.uw", "UW.Improv", "UWIndianConnect", "KWChannelOne", "UWMeet", "UWmetal", "UWPSA", "UWPhotoClub", "p2c.waterloo", "UWPreRehabClub", "UWSFL", "sfpruw", "uwstylesoc", "uwaterlooswaggerloo", "UWVegeration", "UWWiSTEM"]
   end
 
 end
