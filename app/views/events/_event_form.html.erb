@@ -5,8 +5,8 @@
       <%= f.text_field :name %>
     </div>
     <div class="field">
-      <%= f.label :food_type %><br/>
-      <%= f.text_field :food_type %>
+      <%= f.label :tag_list, "Food type (separated by commas)" %><br/>
+      <%= f.text_field :tag_list %>
     </div>
     <div class="field">
       <%= f.label :location %><br/>
@@ -36,11 +36,11 @@
     </div>
     <div class="field">
       <%= f.label :quality %><br/>
-      <%= f.text_field :quality %>
+      <%= f.select :quality, quality_pick %>
     </div>
     <div class="field">
       <%= f.label :awkwardness %><br/>
-      <%= f.text_field :awkwardness %>
+      <%= f.select :awkwardness, awkwardness_pick %>
     </div>
     <div class="field">
       <%= f.label :wait_time %><br/>
@@ -51,5 +51,4 @@
     <%= f.submit %>
     <%= f.hidden_field :user_id, :value => @user_id %>
   </div>
-
 <% end %>

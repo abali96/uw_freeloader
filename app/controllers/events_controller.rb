@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
-
-
+  before_filter :ensure_logged_in
   def index
     @events = Event.all
   end
@@ -48,7 +47,7 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :food_type, :location, :start_time, :quantity, :quality, :awkwardness, :wait_time, :user_id)
+    params.require(:event).permit(:name, :food_type, :location, :start_time, :quantity, :quality, :awkwardness, :wait_time, :user_id, :tag_list)
   end
 
 

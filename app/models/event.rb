@@ -7,6 +7,8 @@ class Event < ActiveRecord::Base
   geocoded_by :location   # can also be an IP address
   after_validation :geocode
 
+  acts_as_taggable
+
   def add_university
     self.location = self.location + " " + self.user.university
   end
