@@ -1,4 +1,6 @@
 <h1>Welcome</h1>
+<%= link_to "Sign up", new_user_path %> | <%= link_to "Log in", sessions_new_path %>
+
 <% @events.all.each do |e| %>
   <p><%= link_to e.name, event_url(e) %></p>
 <% end %>
