@@ -1,3 +1,5 @@
 <%= @event.name %>
 
 <%= link_to "Update", edit_event_url(@event) %>
+
+<%= link_to "Take me there!", "https://www.google.com/maps?saddr=My+Location&daddr=#{@event.latitude},#{@event.longitude}" %>
