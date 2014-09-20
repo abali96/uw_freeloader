@@ -1,0 +1,54 @@
+<%= form_for @event do |f| %>
+  <% if !(@event.id) %>
+    <div class="field">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :food_type %><br/>
+      <%= f.text_field :food_type %>
+    </div>
+    <div class="field">
+      <%= f.label :location %><br/>
+      <%= f.text_field :location %>
+    </div>
+    <div class="field">
+      <%= f.label :start_time %><br/>
+      <%= f.datetime_select :start_time, {default: Time.now} %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= f.label :food_type %><br/>
+      <%= f.text_field :food_type %>
+    </div>
+    <div class="field">
+      <%= f.label :location %><br/>
+      <%= f.text_field :location %>
+    </div>
+    <div class="field">
+      <%= f.label :start_time %><br/>
+      <%= f.datetime_select :start_time, {default: Time.now} %>
+    </div>
+    <div class="field">
+      <%= f.label :quantity %><br/>
+      <%= f.text_field :quantity%>
+    </div>
+    <div class="field">
+      <%= f.label :quality, "Quality out of 5" %><br/>
+      <%= f.text_field :quality %>
+    </div>
+    <div class="field">
+      <%= f.label :awkwardness, "Awkwardness out of 5" %><br/>
+      <%= f.text_field :awkwardness %>
+    </div>
+    <div class="field">
+      <%= f.label :wait_time, "Wait Time (minutes)" %><br/>
+      <%= f.text_field :wait_time %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
