@@ -10,4 +10,5 @@ class Event < ActiveRecord::Base
   def add_university
     self.location = self.location + " " + self.user.university
   end
+
 end
