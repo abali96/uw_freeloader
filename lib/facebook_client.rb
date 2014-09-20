@@ -6,7 +6,7 @@ module FacebookClient
 
   def query_string(society)
     facebook_client.get_page("#{society}/events?fields=name,description,location").each do |k,v|
-      Event.create(name: k['name'], description: k['description'], start_time: k['start_time'], location: k['location'], user_id: 2)
+      Event.create(name: k['name'], description: k['description'], start_time: k['start_time'], location: k['location'], user_id: User.find_by_email("foodbot@uwaterloo.ca").id)
     end
   end
 

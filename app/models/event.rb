@@ -6,6 +6,7 @@ class Event < ActiveRecord::Base
 
   geocoded_by :location   # can also be an IP address
   after_validation :geocode
+  after_validation :determine_relevant
 
   acts_as_taggable
 
