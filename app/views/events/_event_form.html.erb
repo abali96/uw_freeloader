@@ -16,6 +16,7 @@
       <%= f.label :start_time %><br/>
       <%= f.datetime_select :start_time, {default: Time.now} %>
     </div>
+    <%= f.hidden_field :user_id, :value => @user_id %>
   <% else %>
     <div class="field">
       <%= f.label :food_type %><br/>
@@ -46,7 +47,6 @@
       <%= f.text_field :wait_time %>
     </div>
   <% end %>
-
   <div class="actions">
     <%= f.submit %>
   </div>

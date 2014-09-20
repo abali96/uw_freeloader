@@ -21,6 +21,8 @@ class EventsController < ApplicationController
     else
       render :new
     end
+
+    @user_id = current_user.id
   end
 
   def edit

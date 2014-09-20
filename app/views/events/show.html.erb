@@ -1,1 +1,4 @@
-show.html.erb
+<%= @event.name %>
+
+<%= link_to "Update", update_url(@event) %>
+<%= link_to "Delete", delete_url(@event) %>
