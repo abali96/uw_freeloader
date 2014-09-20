@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
-
-
+  before_filter :ensure_logged_in
   def index
     @events = Event.all
   end
