@@ -11,6 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20140920203752) do
+
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "food_type"
