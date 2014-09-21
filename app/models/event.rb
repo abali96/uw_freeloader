@@ -13,7 +13,9 @@ class Event < ActiveRecord::Base
 
 
   def setup_text
-    $texter.delay(run_at: (self.start_time - 15.minutes)).send_event_notification(self.latitude, self.longitude, self.name, self.location, self.start_time, self.food_type)
+    User.where.not(phone_number: nil).each do |user|
+      $texter.delay(run_at: (self.start_time - 15.minutes)).send_event_notification(user.phone_number, self.latitude, self.longitude, self.name, self.location, self.start_time, self.food_type)
+    end
   end
 
   def add_university
