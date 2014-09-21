@@ -147,5 +147,5 @@ DEPENDENCIES
   spring
   sqlite3
   turbolinks
-  twilio-ruby
+  twilio-ruby (~> 3.12)
   uglifier (>= 1.3.0)
