@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
   before_filter :ensure_logged_in
   def index
-    @events = Event.all
+    @events = Event.all.order('start_time asc')
+    @user = User.new
   end
 
 
