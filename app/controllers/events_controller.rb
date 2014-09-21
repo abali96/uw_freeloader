@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_filter :ensure_logged_in
   def index
     @events = Event.all
+    @user = User.new
   end
 
 

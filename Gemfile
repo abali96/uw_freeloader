@@ -34,11 +34,20 @@ gem 'geocoder'
 
 gem 'acts-as-taggable-on'
 
-gem 'twilio-ruby'
+gem 'twilio-ruby', '~> 3.12'
+gem 'delayed_job_active_record'
 gem 'figaro'
 
+<<<<<<< HEAD
+group :development do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+end
+
+=======
 # gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
+>>>>>>> 557ab542f669e3af4b7c6307617ad4817b42ba99
 # Use unicorn as the app server
 # gem 'unicorn'
 
