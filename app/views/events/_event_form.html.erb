@@ -1,76 +1,28 @@
-<form class="form-horizontal" role="form">
-<%= form_for @event do |f| %>
-  <% if !(@event.id) %>
-    <div class="form-group">
-      <%= f.label :name, :class => 'col-sm-2' %>
-      <div class="col-sm-10">
-        <%= f.text_field :name, :class => 'form-control' %>
-      </div>
+<%= form_for @event, :html => {:class => "form-horizontal", :role => "form", :style=>"padding-left: 25%"} do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.text_field :name, :class => 'form-control', :style => 'width: 50%' %>
     </div>
-    <div class="form-group">
-      <%= f.label :tag_list, "Food type (separated by commas)", :class => 'col-sm-2' %><br/>
-      <div class="col-sm-10">
-        <%= f.text_field :tag_list, :class => 'form-control' %>
-      </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :food_type, "Food type (separated by commas)", :class => 'col-sm-3' %><br/>
+    <div class="col-sm-9">
+      <%= f.text_field :food_type, :class => 'form-control', :style => 'width: 50%' %>
     </div>
-    <div class="form-group">
-      <%= f.label :location, :class => 'col-sm-2' %><br/>
-      <div class="col-sm-10">
-        <%= f.text_field :location, :class => 'form-control' %>
-      </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :location, :class => 'col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.text_field :location, :class => 'form-control', :style => 'width: 50%' %>
     </div>
-    <div class="form-group">
-      <%= f.label :start_time, :class => 'col-sm-2' %><br/>
-      <div class="col-sm-10">
-        <%= f.datetime_select :start_time, {default: Time.now}%>
-      </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :start_time, :class => 'col-sm-3'%>
+    <div class="col-sm-9" style="margin-left: -35px; max-width: 50%">
+      <%= f.datetime_select :start_time, {default: Time.now, with_css_classes: true}  %>
     </div>
-    <%= f.hidden_field :user_id, :value => @user_id %>
-  <% else %>
-    <div class="form-group">
-      <%= f.label :food_type, :class => 'col-sm-2' %><br/>
-      <div class="col-sm-10">
-        <%= f.text_field :food_type, :class => 'form-control' %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :location, :class => 'col-sm-2' %><br/>
-      <div class="col-sm-10">
-        <%= f.text_field :location, :class => 'form-control'%>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :start_time, :class => 'col-sm-2' %><br/>
-      <div class="col-sm-10">
-        <%= f.datetime_select :start_time, {default: Time.now} %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :quantity, :class => 'col-sm-2' %><br/>
-      <div class="col-sm-10">
-        <%= f.text_field :quantity%>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :quality, :class => 'col-sm-2' %><br/>
-      <div class="col-sm-10">
-        <%= f.select :quality, quality_pick %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :awkwardness, :class => 'col-sm-2' %><br/>
-      <div class="col-sm-10">
-        <%= f.select :awkwardness, awkwardness_pick %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :wait_time, :class => 'col-sm-2' %><br/>
-      <div class="col-sm-10">
-        <%= f.text_field :wait_time %>
-      </div>
-    </div>
-  <% end %>
-    <%= f.submit :class => 'btn btn-primary' %>
-    <%= f.hidden_field :user_id, :value => @user_id %>
+  </div>
+  <%= f.hidden_field :user_id, :value => @user_id %>
+  <%= f.submit :class => 'btn btn-primary btn-sm', :style => 'margin-left: -200px' %>
 <% end %>
-</form>

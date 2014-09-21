@@ -16,8 +16,7 @@
 		<p class="slogan-text">
 			Instant text notifications for free food on campus
 		</p>
-		<form class="form-inline">
-	  <%= form_for @user do |f| %>
+	  <%= form_for @user, :html => {:class => 'form-inline'} do |f| %>
 	    <div class="phone-number-field">
 	    	<div class="form-group">
 	<!--     	<div class="input-group-addon">@</div> -->
@@ -27,7 +26,6 @@
 
 	    </div>
 	  <% end %>
-	  </form>
 	</div>
 
 	<div class="col-sm-6">

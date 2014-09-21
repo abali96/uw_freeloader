@@ -131,7 +131,7 @@ p.event-name {
 }
 
 .new-event {
-	width: 50%;
+	margin-top: 150px;
 }
 
 .centering {
@@ -162,4 +162,33 @@ p.event-name {
 
 td.icon-cell {
 	text-align: center;
+}
+
+#wrapper {
+	position: absolute;
+	width: 50%;
+	left: 25%;
+	text-align: center;
+}
+
+.new-event-title {
+	text-align: center;
+}
+
+.new-event-background {
+	background-color: gray;
+	position: absolute;
+	width: 40%;
+	height: 60%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	font-size: 200%;
+	color: black;
+}
+.year, .month, .day, .hour, .minute  {
+	background-color: transparent;
 }

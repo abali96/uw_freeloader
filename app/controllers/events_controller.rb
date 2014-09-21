@@ -17,14 +17,13 @@ class EventsController < ApplicationController
   end
 
   def create
+    @user_id = current_user.id
     @event = Event.new(event_params)
     if @event.save
       redirect_to events_url
     else
       render :new
     end
-
-    @user_id = current_user.id
   end
 
   def edit
