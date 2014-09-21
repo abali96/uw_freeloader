@@ -5,16 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Muli:300,400,700,200i,300i">
+  <link href='http://fonts.googleapis.com/css?family=Tienne:400,700,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:900,400,700,500' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,900,700,600,700italic,600italic,400italic,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  
 </head>
 <body>
-
-	<p>
-		<% if current_user %>
-			Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-		<% else %>
-			<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-		<% end %>
-	</p>
 
 <%= yield %>
 

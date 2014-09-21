@@ -1,6 +1,80 @@
-<h1>Welcome</h1>
+<section class="page">
+	<div class="home-tint background" style="background-image:url('https://c1.staticflickr.com/5/4055/5134434028_0d3c753733_b.jpg')"></div>
+	<div class="row">
+		<div class="col-sm-6">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			
 
-<% @events.all.each do |e| %>
-  <p><%= link_to e.name, event_url(e) %></p>
+		<h1 class="homepage-title">WATERLOO FREELOADER</h1>
+	
+		<p class="slogan-text">
+			Instant text notifications for free food on campus
+		</p>
+		<form class="form-inline">
+	  <%= form_for @user do |f| %>
+	    <div class="phone-number-field">
+	    	<div class="form-group">
+	<!--     	<div class="input-group-addon">@</div> -->
+	      	<%= f.text_field :phone_number, :placeholder => "(519) 555-5555", :class => 'form-control', :style => "height: 50px; width: 435px; font-size: 95%;" %>
+	      </div>
+	      <%= f.submit "SIGN UP", :class => 'btn btn-primary', :style => "width: 150px; font-size: 70%" %>
 
-<% end %>
+	    </div>
+	  <% end %>
+	  </form>
+	</div>
+
+	<div class="col-sm-6">
+
+		<br>
+		<br>
+		<br>
+
+
+		<div class='card-container'>
+			<% @events.each do |e| %>
+				<div class="card">
+					<div class="card-content">
+						<p class='event-name'><%= e.name.truncate(32) %></p>
+						<table class="table">
+						<tr>
+							<td class='icon-cell'><i class="fa fa-spoon fa-2x" style="color: #54b77b"></i></td>
+							<td><%= e.food_type.capitalize %></td>
+						</tr>
+						<tr>
+							<td class='icon-cell'><i class="fa fa-clock-o fa-2x" style="color: #ffdc00"></i></td>
+							<td><%= e.start_time.strftime('%A, %b %d at %I:%M %p') %></td>
+						</tr>
+						<tr>
+							<td class='icon-cell'><i class="fa fa-pie-chart fa-2x" style="color: #dd4336"></i></td>
+							<td><%= "Unknown quantity remaining" %></td>
+						</tr>
+						<tr>
+							<td class='icon-cell'><i class="fa fa-map-marker fa-2x" style="color: #1f43ff"></i></td>
+							<td><%= link_to e.location, "http://www.google.com/maps?saddr=My+Location&daddr=#{e.latitude},#{e.longitude}" %></td>
+						</tr>
+
+
+						<!-- <p class='event-time'><i class="fa fa-clock-o fa-2x"></i> <span><%= e.start_time.strftime('%A, %b %d at %I:%M %p') %></span></p> -->
+						
+						<!-- <p class='event-quantity'><i class="fa fa-pie-chart fa-2x"></i><span>About 500 left</span></p> -->
+
+						<!-- <i class="fa fa-map-marker fa-2x" style="color: #1f43ff"></i> <span><%= link_to e.location, "http://www.google.com/maps?saddr=My+Location&daddr=#{e.latitude},#{e.longitude}" %></span></p> -->
+						</table>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+	</div>
+
+
+</section>
+
