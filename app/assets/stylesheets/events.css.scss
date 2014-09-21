@@ -82,7 +82,7 @@ h1 {
   font-size: 600%;
   letter-spacing: 6px;
   line-height: 110%;
-  margin-left: 7vh; 
+  margin-left: 12vh; 
 }
 
 .phone-number-field {
@@ -95,11 +95,11 @@ h1 {
   font-size: 200%;
   font-weight: 300;
 /*  width: 100%;*/
-	margin-left: 7vh;
+	margin-left: 12vh;
 }
 
 .slogan-text {
-	margin-left: 7vh;
+	margin-left: 12vh;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	font-size: 190%;
@@ -113,6 +113,11 @@ input {
   border-radius: 5px;
   font-size: 95%;
   text-align: left;
+}
+
+p.event-name {
+	font-size: 150%;
+	line-height: 0;
 }
 
 .homepage-slogan {
@@ -136,20 +141,25 @@ input {
 
 .card-container {
 	margin: 7vh 20vh 7vh 15vh;
-	height: 70vh;
+	height: 72.5vh;
 	overflow: scroll;
 }
 
 .card {
-	height: 50%;
+	height: 47%;
 	width: 75%;
-	margin: 1vh 7vh;
+	margin: 1vh 14vh;
 	background-color: white;
 }
+
 
 .card-content {
 	color: black;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	padding: 2vh;
+}
+
+td.icon-cell {
+	text-align: center;
 }
