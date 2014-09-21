@@ -14,17 +14,17 @@ class Event < ActiveRecord::Base
   acts_as_taggable
 
   def start_time_greater_than_now
-    if self.start_time < Time.current
+    if self.start_time < (Time.current - 5.minutes)
       errors.add(:timeslot, "- must have at least one in event.")
     end
   end
 
   def setup_text
-    $texter.delay(run_at: (self.start_time - 15.minutes)).send_event_notification(self.latitude, self.longitude, self.name, self.location, self.start_time, self.food_type)
+    $texter.delay(run_at: (self.start_time - 15.minutes)).send_event_notification(self.latitude, self.longitude, self.name, self.location, self.start_time.utc - 4.hours, self.food_type)
   end
 
   def add_university
-    self.location = self.location + " " + self.user.university
+    self.location = self.location + " " + "Waterloo"
   end
 
   def determine_relevant
