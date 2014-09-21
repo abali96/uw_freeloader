@@ -12,7 +12,7 @@ class Event < ActiveRecord::Base
 
 
   def add_university
-    self.location = self.location + " " + self.user.university
+    self.location = self.location + " " + "Waterloo"
   end
 
   def determine_relevant
