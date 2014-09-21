@@ -1,3 +1,80 @@
-// Place all the styles related to the Events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*tml {
+	background: no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.9;
+}*/
+
+
+@mixin background-size {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+body {
+	color: white;
+	overflow: hidden;
+}
+
+h1 {
+	color: white;
+}
+
+
+.page {
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	top: -7.6px;
+	left: -7.6px;
+}
+
+
+.background { 
+	@include background-size;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: -1000;
+}
+
+.home-tint {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(95%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+
+  &.home-tint:before {
+      content: "";
+      display: block;
+      position: relative;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(20,20 ,50, 0.9);
+  }
+}
+
+.homepage-title {
+	position: fixed;
+	top: 17%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: Muli;
+	font-weight: 700;
+	font-size: 350%
+}
+
+.homepage-slogan {
+	position: fixed;
+	top: 27%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: Muli;
+	font-weight: 300;
+	font-style: italic;
+}

@@ -32,6 +32,8 @@ GEM
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
+    bootstrap-sass (3.2.0.2)
+      sass (~> 3.2)
     builder (3.2.2)
     byebug (2.7.0)
       columnize (~> 0.3)
@@ -157,6 +159,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   bcrypt (~> 3.1.7)
+  bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
   delayed_job_active_record
   figaro
