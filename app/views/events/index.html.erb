@@ -38,10 +38,24 @@
 
 
 		<div class='card-container'>
-			<div class="card">
-			</div>
-			<div class='card'>
-			</div>
+			<% @events.each do |e| %>
+				<div class="card">
+					<div class="card-content">
+						<%= e.name %>
+						<br>
+						<%= e.food_type %>
+						<br>
+						Time: <%= e.start_time %>
+						<br>
+						<% if e.description %>
+						Description: <%= e.description.truncate(150) %>
+						<% end %>
+						<br>
+						<%= e.location %>
+						<i class="fa fa-map-marker" style="color: #1f43ff"></i>
+					</div>
+				</div>
+			<% end %>
 		</div>
 	</div>
 
