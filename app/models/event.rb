@@ -7,9 +7,14 @@ class Event < ActiveRecord::Base
   geocoded_by :location   # can also be an IP address
   after_validation :geocode
   after_validation :determine_relevant
+  after_validation :setup_text
 
   acts_as_taggable
 
+
+  def setup_text
+    $texter.delay(run_at: self.start_time - 15.minutes).send_event_notification(event.name, )
+  end
 
   def add_university
     self.location = self.location + " " + self.user.university
@@ -22,6 +27,7 @@ class Event < ActiveRecord::Base
       sentences = name.split(/[.?!]/)
     end
     relevant_sentences = 0
+    food_types = []
     food_keywords = ["food", "drinks", "refreshments", "cookies", "juice", "cake", "snacks", "dinner", "lunch", "breakfast", "chocolate", "icecream", "ben and jerry", "oatmeal", "appetizer", "pie", "cupcake", "fruit", "coffee", "tea", "water", "juice", "wine", "booze", "alcohol", "beer", "cheese", "salad", "chicken wings", "fish", "eggs", "bread", "candy", "milk", "curry", "fish", "tarts", "strudel", "pizza", "pop", "chips", "salsa", "waffles", "pancakes", "soup", "frech toast", "fries", "poutine", "popcorn", "cotton candy", "popsicle", "banana", "apple", "sushi", "pasta", "watermelon", "hot chocolate", "butter chicken", "rice", "roti", "noodles", "ramen", "dumplings", "dim sum", "shawarma", "burritos"]
     require_keywords = ["provided", "free", "complimentary", "included"]
 
@@ -30,6 +36,7 @@ class Event < ActiveRecord::Base
       free_relevance = 0
       food_keywords.each do |kw|
         if sentence.downcase.include?(kw)
+          food_types << kw
           food_relevance += 1
         end
       end
@@ -45,5 +52,9 @@ class Event < ActiveRecord::Base
       end
     end
     self.update_attribute(:relevant, relevant_sentences)
+    food_types = food_types.uniq.join(', ')
+    if !self.food_type || self.food_type.empty?
+      self.update_attribute(:food_type, food_types)
+    end
   end
 end
