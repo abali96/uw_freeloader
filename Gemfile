@@ -34,8 +34,15 @@ gem 'geocoder'
 
 gem 'acts-as-taggable-on'
 
-gem 'twilio-ruby'
+gem 'twilio-ruby', '~> 3.12'
+gem 'delayed_job_active_record'
 gem 'figaro'
+
+group :development do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
