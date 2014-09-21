@@ -2,6 +2,5 @@
 
 <% @events.all.each do |e| %>
   <p><%= link_to e.name, event_url(e) %></p>
-  <p>Food Type: <%= raw e.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 
 <% end %>
