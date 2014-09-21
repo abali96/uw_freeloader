@@ -70,29 +70,39 @@ h1 {
 }
 
 .homepage-title {
-  width: 100%;
-  text-align: center;
-	position: fixed;
+/*  width: 100%;*/
+/*  text-align: center;*/
+/*	position: fixed;
 	top: 17.5%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	left: 50%;*/
+/*	transform: translate(-50%, -50%);*/
 	font-weight: 500;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-size: 600%;
-  letter-spacing: 7px;
+  letter-spacing: 6px;
+  line-height: 110%;
+  margin-left: 7vh; 
 }
 
 .phone-number-field {
-  text-align: center;
+/*  text-align: center;
   position: fixed;
-  top: 45%;
+  top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);*/
   font-family: Muli;
   font-size: 200%;
   font-weight: 300;
-  width: 100%;
+/*  width: 100%;*/
+	margin-left: 7vh;
+}
+
+.slogan-text {
+	margin-left: 7vh;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 190%;
 }
 
 input {
@@ -116,5 +126,23 @@ input {
 }
 
 .new-event {
-	
+	width: 50%;
+}
+
+.centering {
+	width: 100vw;
+	text-align: center;
+}
+
+.card-container {
+	margin: 7vh 20vh 7vh 15vh;
+	height: 70vh;
+	overflow: scroll;
+}
+
+.card {
+	height: 50%;
+	width: 75%;
+	margin: 1vh 7vh;
+	background-color: white;
 }
