@@ -5,8 +5,8 @@
       <%= f.text_field :name %>
     </div>
     <div class="field">
-      <%= f.label :tag_list, "Food type (separated by commas)" %><br/>
-      <%= f.text_field :tag_list %>
+      <%= f.label :food_type, "Food type (separated by commas)" %><br/>
+      <%= f.text_field :food_type %>
     </div>
     <div class="field">
       <%= f.label :location %><br/>
@@ -18,10 +18,6 @@
     </div>
     <%= f.hidden_field :user_id, :value => @user_id %>
   <% else %>
-    <div class="field">
-      <%= f.label :food_type %><br/>
-      <%= f.text_field :food_type %>
-    </div>
     <div class="field">
       <%= f.label :location %><br/>
       <%= f.text_field :location %>
