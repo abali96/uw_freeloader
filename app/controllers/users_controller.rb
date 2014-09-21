@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+
       redirect_to events_path
     else
       render :new
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :university, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :university, :phone_number, :password, :password_confirmation)
   end
 
 end
