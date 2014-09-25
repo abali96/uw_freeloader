@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   has_many :events
   has_many :votes
-  has_secure_password
+  # has_secure_password
+  # phony_normalize :phone_number
+  validate :phone_number, length: { is: 10 }
 
 
   def login

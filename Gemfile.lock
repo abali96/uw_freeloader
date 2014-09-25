@@ -45,9 +45,6 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.8.9)
-    countries (0.9.3)
-      currencies (~> 0.4.2)
-    currencies (0.4.2)
     debugger-linecache (1.2.0)
     delayed_job (4.0.2)
       activesupport (>= 3.0, < 4.2)
@@ -85,11 +82,6 @@ GEM
     multi_json (1.10.1)
     multipart-post (2.0.0)
     pg (0.17.1)
-    phony (2.4.1)
-    phony_rails (0.6.2)
-      activesupport (>= 3.0)
-      countries (>= 0.8.2)
-      phony (~> 2.1)
     polyglot (0.3.5)
     pry (0.10.0)
       coderay (~> 1.1.0)
@@ -178,7 +170,6 @@ DEPENDENCIES
   jquery-rails
   koala (~> 1.10.0rc)
   pg
-  phony_rails
   pry-byebug
   pry-rails
   rails (= 4.1.1)

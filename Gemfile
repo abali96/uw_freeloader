@@ -37,7 +37,7 @@ gem 'acts-as-taggable-on'
 gem 'twilio-ruby', '~> 3.12'
 gem 'delayed_job_active_record'
 gem 'figaro'
-gem 'phony_rails'
+# gem 'phony_rails'
 
 group :development do
   gem 'pry-rails'
