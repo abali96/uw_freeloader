@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   before_validation :add_university
 
   validate :start_time_greater_than_now
+  validates :name, :uniqueness => {:scope => [:start_time, :location]}
 
   geocoded_by :location   # can also be an IP address
   after_validation :geocode
@@ -30,7 +31,7 @@ class Event < ActiveRecord::Base
   def determine_relevant
     relevant_sentences = 0
     food_types = []
-    food_keywords = ["food", "drinks", "refreshments", "cookies", "juice", "cake", "snacks", "dinner", "lunch", "breakfast", "chocolate", "icecream", "ben and jerry", "oatmeal", "appetizer", "pie", "cupcake", "fruit", "coffee", "tea", "water", "juice", "wine", "booze", "alcohol", "beer", "cheese", "salad", "chicken wings", "fish", "eggs", "bread", "candy", "milk", "curry", "fish", "tarts", "strudel", "pizza", "pop", "chips", "salsa", "waffles", "pancakes", "soup", "frech toast", "fries", "poutine", "popcorn", "cotton candy", "popsicle", "banana", "apple", "sushi", "pasta", "watermelon", "hot chocolate", "butter chicken", "rice", "roti", "noodles", "ramen", "dumplings", "dim sum", "shawarma", "burritos"]
+    food_keywords = ["food", "drinks", "refreshments", "cookies", "juice", "cake", "snacks", "dinner", "lunch", "breakfast", "chocolate", "icecream", "ben and jerry", "oatmeal", "appetizer", "pie", "cupcake", "fruit", "coffee", "tea", "water", "juice", "wine", "booze", "alcohol", "beer", "cheese", "salad", "chicken wings", "fish", "eggs", "bread", "candy", "milk", "curry", "fish", "tarts", "strudel", "pizza", "pop", "chips", "salsa", "waffles", "pancakes", "soup", "frech toast", "fries", "poutine", "popcorn", "cotton candy", "popsicle", "banana", "apple", "sushi", "pasta", "watermelon", "hot chocolate", "butter chicken", "rice", "roti", "noodles", "ramen", "dumplings", "dim sum", "shawarma", "burritos", "donuts"]
     require_keywords = ["provided", "free", "complimentary", "included"]
 
     if description
@@ -38,7 +39,7 @@ class Event < ActiveRecord::Base
     else
       sentences = name.split(/[.?!]/)
     end
-  
+
     sentences.each do |sentence|
       food_relevance = 0
       free_relevance = 0

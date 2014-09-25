@@ -11,4 +11,11 @@ class Texter
       )
     end
   end
+
+  def send_welcome_text(name, phone_number)
+    twilio_client.messages.create(
+    :from => '+12898073438',
+    :to => phone_number,
+    :body => "Welcome to Waterloo Freeloader #{name}! We promise we won't spam, but if at any time you'd like to subscribe, text 'IWantToPay' back to this number."
+  end
 end
