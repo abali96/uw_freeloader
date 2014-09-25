@@ -82,7 +82,7 @@ h1 {
   font-size: 600%;
   letter-spacing: 6px;
   line-height: 110%;
-  margin-left: 12vh; 
+  margin-left: 12vh;
 }
 
 .phone-number-field {
@@ -131,7 +131,7 @@ p.event-name {
 }
 
 .new-event {
-	width: 50%;
+	margin-top: 150px;
 }
 
 .centering {
@@ -142,13 +142,14 @@ p.event-name {
 .card-container {
 	margin: 7vh 20vh 7vh 15vh;
 	height: 72.5vh;
-	overflow: scroll;
+	overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .card {
 	height: 47%;
 	width: 75%;
-	margin: 1vh 14vh;
+	margin: 0vh 14vh 2vh;
 	background-color: white;
 }
 
@@ -162,4 +163,40 @@ p.event-name {
 
 td.icon-cell {
 	text-align: center;
+}
+
+#wrapper {
+	position: absolute;
+	width: 50%;
+	left: 25%;
+	text-align: center;
+}
+
+.new-event-title {
+	text-align: center;
+}
+
+.new-event-background {
+	background-color: gray;
+	position: absolute;
+	width: 40%;
+	height: 60%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	font-size: 200%;
+	color: black;
+}
+.year, .month, .day, .hour, .minute  {
+	background-color: transparent;
+}
+
+.new-submission {
+  position: fixed;
+  right: 2%;
+  top: 1.5%;
+  font-family: Roboto, sans-serif;
 }

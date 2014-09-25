@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :ensure_logged_in
+  # before_filter :ensure_logged_in
   def index
     @events = Event.all.where(relevant: true).order('start_time asc')
     @user = User.new
@@ -12,19 +12,19 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-
-    @user_id = current_user.id
+    if current_user
+      @user_id = current_user.id
+    end
   end
 
   def create
+    @user_id = current_user.id
     @event = Event.new(event_params)
     if @event.save
       redirect_to events_url
     else
       render :new
     end
-
-    @user_id = current_user.id
   end
 
   def edit

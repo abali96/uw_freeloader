@@ -28,16 +28,17 @@ class Event < ActiveRecord::Base
   end
 
   def determine_relevant
-    if description
-      sentences = description.split(/[.?!]/)
-    else
-      sentences = name.split(/[.?!]/)
-    end
     relevant_sentences = 0
     food_types = []
     food_keywords = ["food", "drinks", "refreshments", "cookies", "juice", "cake", "snacks", "dinner", "lunch", "breakfast", "chocolate", "icecream", "ben and jerry", "oatmeal", "appetizer", "pie", "cupcake", "fruit", "coffee", "tea", "water", "juice", "wine", "booze", "alcohol", "beer", "cheese", "salad", "chicken wings", "fish", "eggs", "bread", "candy", "milk", "curry", "fish", "tarts", "strudel", "pizza", "pop", "chips", "salsa", "waffles", "pancakes", "soup", "frech toast", "fries", "poutine", "popcorn", "cotton candy", "popsicle", "banana", "apple", "sushi", "pasta", "watermelon", "hot chocolate", "butter chicken", "rice", "roti", "noodles", "ramen", "dumplings", "dim sum", "shawarma", "burritos"]
     require_keywords = ["provided", "free", "complimentary", "included"]
 
+    if description
+      sentences = description.split(/[.?!]/)
+    else
+      sentences = name.split(/[.?!]/)
+    end
+  
     sentences.each do |sentence|
       food_relevance = 0
       free_relevance = 0
