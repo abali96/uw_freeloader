@@ -40,29 +40,22 @@
 					<div class="card-content">
 						<p class='event-name'><%= e.name.truncate(25) %></p>
 						<table class="table">
-						<tr>
-							<td class='icon-cell'><i class="fa fa-spoon fa-2x" style="color: #54b77b"></i></td>
-							<td><%= e.food_type.capitalize %></td>
-						</tr>
-						<tr>
-							<td class='icon-cell'><i class="fa fa-clock-o fa-2x" style="color: #ffdc00"></i></td>
-							<td><%= e.start_time.strftime('%A, %b %d at %I:%M %p') %></td>
-						</tr>
-						<tr>
-							<td class='icon-cell'><i class="fa fa-pie-chart fa-2x" style="color: #dd4336"></i></td>
-							<td><%= "Unknown quantity remaining" %></td>
-						</tr>
-						<tr>
-							<td class='icon-cell'><i class="fa fa-map-marker fa-2x" style="color: #1f43ff"></i></td>
-							<td><%= link_to e.location, "http://www.google.com/maps?saddr=My+Location&daddr=#{e.latitude},#{e.longitude}" %></td>
-						</tr>
-
-
-						<!-- <p class='event-time'><i class="fa fa-clock-o fa-2x"></i> <span><%= e.start_time.strftime('%A, %b %d at %I:%M %p') %></span></p> -->
-
-						<!-- <p class='event-quantity'><i class="fa fa-pie-chart fa-2x"></i><span>About 500 left</span></p> -->
-
-						<!-- <i class="fa fa-map-marker fa-2x" style="color: #1f43ff"></i> <span><%= link_to e.location, "http://www.google.com/maps?saddr=My+Location&daddr=#{e.latitude},#{e.longitude}" %></span></p> -->
+							<tr>
+								<td class='icon-cell'><i class="fa fa-spoon fa-2x" style="color: #54b77b"></i></td>
+								<td><%= e.food_type.capitalize %></td>
+							</tr>
+							<tr>
+								<td class='icon-cell'><i class="fa fa-clock-o fa-2x" style="color: #ffdc00"></i></td>
+								<td><%= e.start_time.strftime('%A, %b %d at %I:%M %p') %></td>
+							</tr>
+							<tr>
+								<td class='icon-cell'><i class="fa fa-pie-chart fa-2x" style="color: #dd4336"></i></td>
+								<td><%= "Unknown quantity remaining" %></td>
+							</tr>
+							<tr>
+								<td class='icon-cell'><i class="fa fa-map-marker fa-2x" style="color: #1f43ff"></i></td>
+								<td><%= link_to e.location, "http://www.google.com/maps?saddr=My+Location&daddr=#{e.latitude},#{e.longitude}" %></td>
+							</tr>
 						</table>
 					</div>
 				</div>
