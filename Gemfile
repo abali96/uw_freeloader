@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -42,6 +42,10 @@ group :development do
   gem 'pry-rails'
   gem 'pry-byebug'
 end
+
+# heroku
+
+gem 'rails_12factor', group: :production
 
 
 # Use unicorn as the app server
