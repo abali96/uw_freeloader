@@ -70,12 +70,7 @@ h1 {
 }
 
 .homepage-title {
-/*  width: 100%;*/
-/*  text-align: center;*/
-/*	position: fixed;
-	top: 17.5%;
-	left: 50%;*/
-/*	transform: translate(-50%, -50%);*/
+  margin-top: 32%;
 	font-weight: 500;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
@@ -85,24 +80,19 @@ h1 {
   margin-left: 12vh;
 }
 
+.slogan-text {
+  margin-left: 12vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 190%;
+}
+
 .phone-number-field {
-/*  text-align: center;
-  position: fixed;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);*/
+  position: absolute;
   font-family: Muli;
   font-size: 200%;
   font-weight: 300;
-/*  width: 100%;*/
 	margin-left: 12vh;
-}
-
-.slogan-text {
-	margin-left: 12vh;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-	font-size: 190%;
 }
 
 input {
@@ -142,14 +132,14 @@ p.event-name {
 .card-container {
 	margin: 7vh 20vh 7vh 15vh;
 	height: 72.5vh;
+  width: 62.5%;
 	overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .card {
-	height: 47%;
-	width: 75%;
-	margin: 0vh 14vh 2vh;
+	width: 80%;
+	margin: 0vh 12vh 2vh;
 	background-color: white;
 }
 

@@ -2,13 +2,6 @@
 	<div class="home-tint background" style="background-image:url('https://c1.staticflickr.com/5/4055/5134434028_0d3c753733_b.jpg')"></div>
 	<div class="row">
 		<div class="col-sm-6">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
 
 		<h1 class="homepage-title">WATERLOO FREELOADER</h1>
 
@@ -18,7 +11,6 @@
 	  <%= form_for @user, :html => {:class => 'form-inline'} do |f| %>
 	    <div class="phone-number-field">
 	    	<div class="form-group">
-	<!--     	<div class="input-group-addon">@</div> -->
 	      	<%= f.text_field :phone_number, :placeholder => "(519) 555-5555", :class => 'form-control', :style => "height: 50px; width: 435px; font-size: 95%;" %>
 	      </div>
 	      <%= f.submit "SIGN UP", :class => 'btn btn-primary', :style => "width: 150px; font-size: 70%" %>
@@ -27,41 +19,41 @@
 	  <% end %>
 	</div>
 
-	<div class="col-sm-6">
-		<p class='new-submission'><i class="fa fa-plus"></i><%= link_to "  Found Free Food?", new_event_path, {:style=>'color:#FFFFFF; font-weight: 400'}%></p>
-		<br>
-		<br>
-		<br>
+		<div class="col-sm-6">
+			<p class='new-submission'><i class="fa fa-plus"></i><%= link_to "  Found Free Food?", new_event_path, {:style=>'color:#FFFFFF; font-weight: 400'}%></p>
+			<br>
+			<br>
+			<br>
 
 
-		<div class='card-container'>
-			<% @events.each do |e| %>
-				<div class="card">
-					<div class="card-content">
-						<p class='event-name'><%= e.name.truncate(25) %></p>
-						<table class="table">
-							<tr>
-								<td class='icon-cell'><i class="fa fa-spoon fa-2x" style="color: #54b77b"></i></td>
-								<td><%= e.food_type.capitalize %></td>
-							</tr>
-							<tr>
-								<td class='icon-cell'><i class="fa fa-clock-o fa-2x" style="color: #ffdc00"></i></td>
-								<td><%= e.start_time.strftime('%A, %b %d at %I:%M %p') %></td>
-							</tr>
-							<tr>
-								<td class='icon-cell'><i class="fa fa-pie-chart fa-2x" style="color: #dd4336"></i></td>
-								<td><%= "Unknown quantity remaining" %></td>
-							</tr>
-							<tr>
-								<td class='icon-cell'><i class="fa fa-map-marker fa-2x" style="color: #1f43ff"></i></td>
-								<td><%= link_to e.location, "http://www.google.com/maps?saddr=My+Location&daddr=#{e.latitude},#{e.longitude}" %></td>
-							</tr>
-						</table>
+			<div class='card-container'>
+				<% @events.each do |e| %>
+					<div class="card">
+						<div class="card-content">
+							<p class='event-name'><%= e.name.truncate(25) %></p>
+							<table class="table">
+								<tr>
+									<td class='icon-cell'><i class="fa fa-spoon fa-2x" style="color: #54b77b"></i></td>
+									<td><%= e.food_type.capitalize %></td>
+								</tr>
+								<tr>
+									<td class='icon-cell'><i class="fa fa-clock-o fa-2x" style="color: #ffdc00"></i></td>
+									<td><%= e.start_time.strftime('%A, %b %d at %I:%M %p') %></td>
+								</tr>
+								<tr>
+									<td class='icon-cell'><i class="fa fa-pie-chart fa-2x" style="color: #dd4336"></i></td>
+									<td><%= "Unknown quantity remaining" %></td>
+								</tr>
+								<tr>
+									<td class='icon-cell'><i class="fa fa-map-marker fa-2x" style="color: #1f43ff"></i></td>
+									<td><%= link_to e.location, "http://www.google.com/maps?saddr=My+Location&daddr=#{e.latitude},#{e.longitude}" %></td>
+								</tr>
+							</table>
+						</div>
 					</div>
-				</div>
-			<% end %>
+				<% end %>
+			</div>
 		</div>
-	</div>
 
 	</div>
 

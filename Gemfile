@@ -37,15 +37,20 @@ gem 'acts-as-taggable-on'
 gem 'twilio-ruby', '~> 3.12'
 gem 'delayed_job_active_record'
 gem 'figaro'
+gem 'phony_rails'
 
 group :development do
   gem 'pry-rails'
   gem 'pry-byebug'
 end
 
+
+
+
 # heroku
 
 gem 'rails_12factor', group: :production
+ruby "2.1.0"
 
 
 # Use unicorn as the app server
