@@ -1,5 +1,5 @@
 namespace :users do
-  desc "Rake task to get events data"
+  desc "Rake task to unusubscribe those who wish to be unsubscribed"
   task :unsubscribe => :environment do
     include TwilioClient
     twilio_client
@@ -18,6 +18,6 @@ namespace :users do
         end
       end
     end
-    puts "#{Time.now} - Success!"
+    puts "DONE UNSUBSCRIBING #{Time.now} - Success!"
   end
 end

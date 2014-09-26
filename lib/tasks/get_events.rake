@@ -3,6 +3,6 @@ namespace :events do
   task :get => :environment do
     include FacebookClient
     get_events
-    puts "#{Time.now} - Success!"
+    puts "DONE GETTING EVENTS #{Time.now} - Success!"
   end
 end

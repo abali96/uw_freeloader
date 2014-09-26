@@ -26,3 +26,7 @@ set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log
 every 15.minutes do
   rake "users:unsubscribe"
 end
+
+every 1.day, :at => '1:40 am' do
+  rake "events:get"
+end
