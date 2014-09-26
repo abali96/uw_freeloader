@@ -18,7 +18,11 @@ class EventsController < ApplicationController
   end
 
   def create
-    @user_id = current_user.id
+    if current_user
+      @user_id = current_user.id
+    else
+      @user_id = nil
+    end
     @event = Event.new(event_params)
     if @event.save
       redirect_to events_url
