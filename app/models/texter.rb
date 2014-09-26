@@ -20,4 +20,26 @@ class Texter
     :body => body
     )
   end
+
+  def unsubscribe
+    twilio_client
+    @client.account.messages.list({:to => "+12898073438"}).each do |x|
+      if x.body.downcase.include?("iwanttopay")
+        x = x.from[2..-1]
+        if !User.where("phone_number = ?", x).empty?
+          $texter.send_unsubscribe_text(x)
+          User.find_by_phone_number(x).delete
+        end
+      end
+    end
+  end
+
+  def send_unsubscribe_text(phone_number)
+    body = "I guess you don't want free food :("
+    twilio_client.messages.create(
+    :from => '+12898073438',
+    :to => phone_number,
+    :body => body
+    )
+  end
 end

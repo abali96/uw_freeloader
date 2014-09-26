@@ -19,14 +19,5 @@ class User < ActiveRecord::Base
 
   def welcome
     $texter.send_welcome_text(self.phone_number)
-    twilio_client
-    @client.account.messages.list({:to => "+12898073438"}).each do |x|
-      if x.body.downcase.include?("iwanttopay")
-        x = x.from.delete "+1"
-        if !User.where("phone_number = ?", x).empty?
-          User.find_by_phone_number("6478904632").delete
-        end
-      end
-    end
   end
 end
