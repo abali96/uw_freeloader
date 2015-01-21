@@ -1,6 +1,8 @@
-# Waterloo Freeloader
+terloo Freeloader
 
 ### About
+
+See http://www.arjunbali.com/#uw_freeloader for the detailed tech stack and photo gallery!
 
 This project was completed during Hack the North, a 36-hour hackathon hosted by the University of Waterloo.
 
@@ -12,3 +14,4 @@ Once event data is string-matched and processed for the likelihood of free food,
 - Facebook API
 - Twilio API
 - Delayed Jobs
+
