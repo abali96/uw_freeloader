@@ -45,7 +45,6 @@ class Event < ActiveRecord::Base
       free_relevance = 0
       food_keywords.each do |kw|
         if sentence.downcase.include?(kw)
-          food_types << kw
           food_keywords << food_types
           food_relevance += 1
         end
