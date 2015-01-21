@@ -14,4 +14,7 @@ Once event data is string-matched and processed for the likelihood of free food,
 - Facebook API
 - Twilio API
 - Delayed Jobs
+<<<<<<< HEAD
 
+=======
+>>>>>>> d91263757dd69aaa36f77de09523eb7068d3e588
