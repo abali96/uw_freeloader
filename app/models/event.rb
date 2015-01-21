@@ -11,6 +11,7 @@ class Event < ActiveRecord::Base
   after_validation :geocode
   after_validation :determine_relevant
   after_validation :setup_text
+  after_validation :update_keywords
 
   acts_as_taggable
 
@@ -24,6 +25,10 @@ class Event < ActiveRecord::Base
     $texter.delay(run_at: (self.start_time - 15.minutes)).send_event_notification(self.latitude, self.longitude, self.name, self.location, self.start_time.utc - 4.hours, self.food_type)
   end
 
+  def update_keywords
+    $redis.sadd('food_keywords', food_type.split(', '))
+  end
+
   def add_university
     self.location = self.location + " " + "Waterloo"
   end
@@ -31,13 +36,13 @@ class Event < ActiveRecord::Base
   def determine_relevant
     relevant_sentences = 0
     food_types = []
-    food_keywords = ["food", "drinks", "refreshments", "cookies", "juice", "cake", "snacks", "dinner", "lunch", "breakfast", "chocolate", "icecream", "ben and jerry", "oatmeal", "appetizer", "pie", "cupcake", "fruit", "coffee", "tea", "water", "juice", "wine", "booze", "alcohol", "beer", "cheese", "salad", "chicken wings", "fish", "eggs", "bread", "candy", "milk", "curry", "fish", "tarts", "strudel", "pizza", "pop", "chips", "salsa", "waffles", "pancakes", "soup", "frech toast", "fries", "poutine", "popcorn", "cotton candy", "popsicle", "banana", "apple", "sushi", "pasta", "watermelon", "hot chocolate", "butter chicken", "rice", "roti", "noodles", "ramen", "dumplings", "dim sum", "shawarma", "burritos", "donuts"].uniq
+    food_keywords = $redis.smembers("food_keywords")
     require_keywords = ["provided", "free", "complimentary", "included"]
 
-    if description
-      sentences = description.split(/[.?!]/)
+    sentences = if description
+      description.split(/[.?!]/)
     else
-      sentences = name.split(/[.?!]/)
+      name.split(/[.?!]/)
     end
 
     sentences.each do |sentence|
@@ -65,5 +70,6 @@ class Event < ActiveRecord::Base
     if !self.food_type || self.food_type.empty?
       self.update_attribute(:food_type, food_types)
     end
+
   end
 end

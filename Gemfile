@@ -38,6 +38,8 @@ gem 'twilio-ruby', '~> 3.12'
 gem 'delayed_job_active_record'
 gem 'figaro'
 gem 'whenever', :require => false
+gem 'redis'
+gem 'redis-namespace'
 # gem 'phony_rails'
 
 group :development do
