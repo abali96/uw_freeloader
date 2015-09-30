@@ -1,5 +1,3 @@
-terloo Freeloader
-
 ### About
 
 See http://www.arjunbali.com/#uw_freeloader for the detailed tech stack and photo gallery!
